@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Nomdo</title>
+<meta name="description" content="How Nomdo for iOS handles your data: what stays on your device, what is sent to our analytics service, and how purchases are processed.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Privacy Policy — Nomdo">
+<meta property="og:description" content="What stays on your device, what is sent to our analytics service, and how purchases are processed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6b64'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='18' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --ink: #1c1b19;
+    --ink-soft: #4a4742;
+    --ink-mute: #6f6a63;
+    --rule: #e2ddd4;
+    --accent: #0b6b64;
+    --accent-soft: #e6f1ef;
+    --radius: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f10;
+      --surface: #161617;
+      --ink: #ece9e4;
+      --ink-soft: #c3bfb8;
+      --ink-mute: #948f88;
+      --rule: #2a2a2c;
+      --accent: #6fd3c7;
+      --accent-soft: #16292a;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    text-decoration-color: var(--rule);
+    transition: text-decoration-color 120ms ease;
+  }
+
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10;
+    padding: 0.6rem 0.9rem;
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: 8px;
+  }
+
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: clamp(1.75rem, 6vw, 4.5rem) clamp(1.15rem, 5vw, 2rem) 4.5rem;
+  }
+
+  /* ---- masthead ---- */
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: ui-serif, "New York", "Iowan Old Style", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 6vw, 2.7rem);
+    line-height: 1.08;
+    letter-spacing: -0.018em;
+    margin: 0 0 0.85rem;
+    text-wrap: balance;
+  }
+
+  .meta {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--ink-mute);
+  }
+
+  .lede {
+    margin: 1.75rem 0 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    text-wrap: pretty;
+  }
+
+  /* ---- contents ---- */
+
+  .toc {
+    margin: 2.5rem 0 3rem;
+    padding: 1.15rem 1.35rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    counter-reset: toc;
+  }
+
+  .toc-label {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .toc ol {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 2rem;
+    font-size: 0.9375rem;
+  }
+
+  .toc li {
+    counter-increment: toc;
+    margin: 0 0 0.4rem;
+    break-inside: avoid;
+  }
+
+  .toc a {
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .toc a::before {
+    content: counter(toc) ". ";
+    color: var(--ink-mute);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .toc a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 34rem) {
+    .toc ol { columns: 1; }
+  }
+
+  /* ---- sections ---- */
+
+  .prose section {
+    margin: 0 0 2.75rem;
+    scroll-margin-top: 1.5rem;
+  }
+
+  h2 {
+    margin: 0 0 1.1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 1.3rem;
+    font-weight: 620;
+    letter-spacing: -0.008em;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  .prose section:first-child h2 {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  h3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.55rem;
+    margin: 2rem 0 0.65rem;
+    font-size: 1rem;
+    font-weight: 620;
+    line-height: 1.4;
+  }
+
+  .chip {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    transform: translateY(-1px);
+  }
+
+  p {
+    margin: 0 0 1rem;
+    text-wrap: pretty;
+  }
+
+  section p:last-child,
+  section ul:last-child {
+    margin-bottom: 0;
+  }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    font-size: 0.9em;
+    padding: 0.1em 0.32em;
+    border-radius: 4px;
+    background: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  /* ---- footer ---- */
+
+  footer {
+    margin-top: 3.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--ink-mute);
+  }
+
+  footer p { margin: 0; }
+
+  /* ---- print ---- */
+
+  @media print {
+    :root {
+      --bg: #fff;
+      --surface: #fff;
+      --ink: #000;
+      --ink-soft: #222;
+      --ink-mute: #444;
+      --rule: #bbb;
+      --accent: #000;
+      --accent-soft: #eee;
+    }
+
+    body { font-size: 10.5pt; }
+    .wrap { max-width: none; padding: 0; }
+    .toc, .skip { display: none; }
+    a { text-decoration: none; }
+    h2 { break-after: avoid; }
+    .lede { border-left-color: #000; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Nomdo · iOS</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated <time datetime="2026-11-14">14 November 2026</time></p>
+    <p class="lede">Nomdo does not require an account. Your personal recipe content stays on your device. Purchase information is processed separately.</p>
+  </header>
+
+  <nav class="toc" aria-labelledby="toc-label">
+    <p class="toc-label" id="toc-label">Contents</p>
+    <ol>
+      <li><a href="#device">What stays on your device</a></li>
+      <li><a href="#catalog">The public catalog</a></li>
+      <li><a href="#purchases">Purchases</a></li>
+      <li><a href="#analytics">Usage analytics</a></li>
+      <li><a href="#providers">Service providers</a></li>
+      <li><a href="#retention">Retention and your choices</a></li>
+      <li><a href="#support">Support and children</a></li>
+      <li><a href="#changes">Changes and contact</a></li>
+    </ol>
+  </nav>
+
+  <main id="main" class="prose">
+
+    <section id="device">
+      <h2>What stays on your device</h2>
+      <p>Your ingredients, setup answers, foods you avoid, reminder settings, personal recipes, photos and appearance preferences stay in the app’s protected container and are not sent to analytics services. Your full favorites list stays on your device; Nomdo 1.5 and later report individual favorite actions with a public catalog recipe ID, as described in <a href="#catalog">The public catalog</a>. Your selected app language is included in analytics context in versions 1.1 and later. Breakfast matching and ingredient-name search work offline. If you choose to share a photo, iOS sends the selected image to the app or recipient you choose; that service has its own privacy practices. Device backups are controlled by your Apple settings.</p>
+    </section>
+
+    <section id="catalog">
+      <h2>The public catalog</h2>
+
+      <h3>The Popular collection</h3>
+      <p>The public Popular collection uses observed saves to favorites from the last 30 days, accounting for later removals. Each pseudonymous installation contributes at most one vote per recipe. The public feed contains only recipe IDs, aggregate counts and publication dates; it does not expose user identifiers, sessions or personal favorites lists. Existing favorites are not uploaded to populate this ranking.</p>
+
+      <h3>Recipe IDs in usage events <span class="chip">1.5 and later</span></h3>
+      <p>After you install Nomdo 1.5 or later, opening a recipe from the public Nomdo catalog, adding it to favorites or removing it sends that recipe’s stable catalog ID with the existing usage event. We use these events to count openings and favorite actions for each recipe. The ID identifies a public recipe, not your own recipe text or photos. The full favorites list is not uploaded, and previously saved favorites are not automatically sent. Existing pseudonymous installation and session IDs and the 90-day usage-event retention continue to apply. Versions through 1.4 do not send the recipe ID, so their earlier actions cannot be assigned to individual dishes.</p>
+
+      <h3>Catalog downloads</h3>
+      <p>The app downloads a shared public catalog and its pictures from our server. Catalog requests do not include your ingredients, favorites, personal recipes or photos. The server receives the network address needed to deliver a response. We do not keep access logs for these catalog requests.</p>
+    </section>
+
+    <section id="purchases">
+      <h2>Purchases</h2>
+      <p>Apple processes Nomdo Pro subscriptions and the one-time Lifetime purchase. Apple confirms access in the app; we do not receive your payment card details or Apple ID. The enabled server integration sends RevenueCat transaction identifiers, product and purchase information, subscription status and related events such as trials, renewals, cancellations and refunds. RevenueCat can associate these records with a pseudonymous customer identifier. We use them to verify and analyse purchases. When forwarding to ActivationPal is enabled, ActivationPal also receives these purchase events; version 1.0 does not supply a usage journey to join them to.</p>
+
+      <h3>Version 1.1</h3>
+      <p>In Nomdo 1.1, the app also sends verified transactions and restore information to RevenueCat. Its random customer ID is shared with ActivationPal to connect purchase records with that version’s usage events.</p>
+
+      <h3>Version 1.2 and later</h3>
+      <p>Nomdo 1.2 continues sending verified transactions and restore information to RevenueCat. RevenueCat also forwards purchase and subscription events to our own server, and we have imported available earlier purchase records. Our server stores pseudonymous customer and transaction identifiers, product identifiers, amounts, dates and supported subscription lifecycle details for purchase analytics, reconciliation and support. The 90-day limit for usage events does not apply to these purchase records. They are retained while we use the service, subject to deletion requests and applicable retention obligations.</p>
+    </section>
+
+    <section id="analytics">
+      <h2>Usage analytics</h2>
+
+      <h3>Version 1.2 and later: our own analytics</h3>
+      <p>Nomdo 1.2 replaces the ActivationPal client with our own analytics service. The app sends fixed app-open, screen, recipe-opening, favorite-change, filter, product-count, serving, photo-share and purchase-flow events. Events include random installation, session and event IDs, timestamps, the RevenueCat customer ID, app version/build and selected app language. A first-open event may also include an approximate app-container age in days and an installation-context category. Recipe content, ingredient names, favorite lists and photos are not sent. This version does not send Apple Ads attribution tokens to our analytics service; RevenueCat retains its separate Apple Ads integration.</p>
+      <p>Our collector stores pseudonymous HMAC identifiers rather than raw installation, session or RevenueCat customer IDs. It removes usage events after 90 days (test events after seven days). The network address is needed for delivery and temporary rate limiting; our usage records do not store it or derive a city from it. RevenueCat purchase records have their own retention policy. Existing installations keep their previous local data, and updating is not counted as a new installation.</p>
+
+      <h3>Version 1.4 additions: setup, reminders and sharing</h3>
+      <p>Nomdo 1.4 keeps the analytics described for 1.2 above and adds a few events: that the first-launch setup was shown, which of its screens was reached, whether it was finished or skipped together with the number of matching breakfasts, that a morning or trial reminder was turned on or off, that a reminder notification was opened, and that the app asked iOS for a rating prompt. Your setup answers (what you want to change, cooking time, taste, foods you avoid, ingredients, servings and breakfast time), the reminder time and the breakfast a reminder names are not sent; they stay on your device.</p>
+      <p>Reminders are local notifications that iOS schedules on your device; no push server is involved. Turn them off in the app under Settings › Reminders or in iOS Settings. The dish card you share is created on your device, and iOS sends it only to the app or recipient you choose. Saving it to Photos asks iOS for permission to add an image; Nomdo does not read your photo library.</p>
+
+      <h3>Versions before 1.2: ActivationPal</h3>
+      <p>Older app versions may continue sending usage data to ActivationPal. The separate RevenueCat integration also continues forwarding purchase events to ActivationPal, including purchases associated with newer app versions. Updating does not erase records already held there, and we have not deleted its historical records. The provider and retention descriptions below remain applicable to those records. Nomdo 1.2 has no usage-analytics switch; contact us for access or deletion requests.</p>
+
+      <h3>Version 1.1: ActivationPal and Apple Ads</h3>
+      <p>RevenueCat and ActivationPal integration adds usage analytics and Apple Ads measurement after you install this version. It cannot reconstruct earlier app sessions or subscription-screen interactions. A first SDK launch may belong to an existing installation that has updated.</p>
+      <p>This section applies to Nomdo 1.1 after you install it. ActivationPal receives app-open and screen-view events, subscription-screen interactions, plan choices, purchase and restore results, recipe-opening and favorite-change actions, filter and saved-product counts, servings changes, and photo-share flow outcomes. These events describe fixed actions, categories and counts; they do not include recipe names, search text, ingredient lists, favorite lists, personal recipes or photographs. A completed system share action does not establish that a social post was published.</p>
+      <p>Events carry a random installation ID, session and event IDs, the RevenueCat customer ID, timestamps, app version/build, iOS version, device model, locale, app language, time zone, App Store country and an approximate app-container creation date and age. Its hosting provider derives an approximate country and city from the connection’s IP address. We do not request GPS location. Hosting providers receive IP addresses and may retain them in operational logs.</p>
+      <p>To measure installs from our Apple Ads campaigns, the app sends an Apple attribution token to RevenueCat and ActivationPal. The services use it to obtain Apple’s attribution result. Nomdo does not collect the IDFA advertising identifier, show in-app ads, sell analytics data or use this integration to track you across other companies’ apps and websites.</p>
+
+      <h3>Version 1.0</h3>
+      <p>Apple is configured to send new purchase events to RevenueCat. This happens between servers and does not require an app update. This version does not send app-open, screen-view or subscription-screen interaction events to RevenueCat or ActivationPal, and does not send Apple Ads attribution tokens through these services.</p>
+    </section>
+
+    <section id="providers">
+      <h2>Service providers</h2>
+      <p>RevenueCat processes purchase data for Nomdo. ActivationPal receives purchase data when forwarding is enabled and usage data from version 1.1. These services store analytics data in the United States. Apple handles App Store payments and Apple Ads attribution. Connections use HTTPS. More information: RevenueCat, ActivationPal and Apple.</p>
+    </section>
+
+    <section id="retention">
+      <h2>Retention and your choices</h2>
+      <p>Remove ingredients and favorites in the app. Deleting the app removes its local data; device backups may retain a copy. It does not cancel a subscription or delete records already held by analytics providers. Manage or cancel a subscription in Settings → your name → Subscriptions.</p>
+      <p>There is no setting to stop server-side purchase notifications. Nomdo 1.1 has no in-app usage-analytics switch. ActivationPal has no automatic expiry for records it receives. RevenueCat records are retained for purchase support and analytics while we use the service, subject to deletion requests and any applicable retention obligations. We do not promise a fixed deletion deadline for providers’ logs or backups.</p>
+      <p>For access, correction or deletion requests, email <a href="mailto:artsaverin@gmail.com">artsaverin@gmail.com</a>. We may need an identifier we can match, such as a purchase transaction reference, because analytics records use random IDs rather than your name or email. Without a matching identifier we may be unable to locate your records. Do not send payment card details or passwords. Some purchase records may need to be retained for refunds or legal obligations.</p>
+    </section>
+
+    <section id="support">
+      <h2>Support and children</h2>
+      <p>If you email us, we receive your email address and the information you choose to include, and use them to answer your request. Nomdo is not designed specifically for children.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes and contact</h2>
+      <p>We update this page when our practices change. Questions: <a href="mailto:m.bolotska@gmail.com">m.bolotska@gmail.com</a>.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><a href="index.html">Nomdo</a></p>
+    <p>Privacy policy · <time datetime="2026-11-14">14 November 2026</time></p>
+  </footer>
+
+</div>
+</body>
+</html>
