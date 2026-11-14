@@ -1,1 +1,58 @@
+Nomdo does not require an account. Your personal recipe content stays on your device. Purchase information is processed separately. 
 
+The public Popular collection uses observed saves to favorites from the last 30 days, accounting for later removals. Each pseudonymous installation contributes at most one vote per recipe. The public feed contains only recipe IDs, aggregate counts and publication dates; it does not expose user identifiers, sessions or personal favorites lists. Existing favorites are not uploaded to populate this ranking.
+
+After you install Nomdo 1.5 or later, opening a recipe from the public Nomdo catalog, adding it to favorites or removing it sends that recipe’s stable catalog ID with the existing usage event. We use these events to count openings and favorite actions for each recipe. The ID identifies a public recipe, not your own recipe text or photos. The full favorites list is not uploaded, and previously saved favorites are not automatically sent. Existing pseudonymous installation and session IDs and the 90-day usage-event retention continue to apply. Versions through 1.4 do not send the recipe ID, so their earlier actions cannot be assigned to individual dishes.
+Nomdo 1.4: setup, reminders and sharing
+
+Nomdo 1.4 keeps the analytics described for 1.2 below and adds a few events: that the first-launch setup was shown, which of its screens was reached, whether it was finished or skipped together with the number of matching breakfasts, that a morning or trial reminder was turned on or off, that a reminder notification was opened, and that the app asked iOS for a rating prompt. Your setup answers (what you want to change, cooking time, taste, foods you avoid, ingredients, servings and breakfast time), the reminder time and the breakfast a reminder names are not sent; they stay on your device.
+
+Reminders are local notifications that iOS schedules on your device; no push server is involved. Turn them off in the app under Settings › Reminders or in iOS Settings. The dish card you share is created on your device, and iOS sends it only to the app or recipient you choose. Saving it to Photos asks iOS for permission to add an image; Nomdo does not read your photo library.
+Nomdo 1.2: our own analytics
+
+Nomdo 1.2 replaces the ActivationPal client with our own analytics service. The app sends fixed app-open, screen, recipe-opening, favorite-change, filter, product-count, serving, photo-share and purchase-flow events. Events include random installation, session and event IDs, timestamps, the RevenueCat customer ID, app version/build and selected app language. A first-open event may also include an approximate app-container age in days and an installation-context category. Recipe content, ingredient names, favorite lists and photos are not sent. This version does not send Apple Ads attribution tokens to our analytics service; RevenueCat retains its separate Apple Ads integration.
+
+Our collector stores pseudonymous HMAC identifiers rather than raw installation, session or RevenueCat customer IDs. It removes usage events after 90 days (test events after seven days). The network address is needed for delivery and temporary rate limiting; our usage records do not store it or derive a city from it. RevenueCat purchase records have their own retention policy. Existing installations keep their previous local data, and updating is not counted as a new installation.
+
+Older app versions may continue sending usage data to ActivationPal. The separate RevenueCat integration also continues forwarding purchase events to ActivationPal, including purchases associated with newer app versions. Updating does not erase records already held there, and we have not deleted its historical records. The provider and retention descriptions below remain applicable to those records. Nomdo 1.2 has no usage-analytics switch; contact us for access or deletion requests.
+Nomdo 1.0 and 1.1
+
+Nomdo 1.0: Apple is configured to send new purchase events to RevenueCat. This happens between servers and does not require an app update. This version does not send app-open, screen-view or subscription-screen interaction events to RevenueCat or ActivationPal, and does not send Apple Ads attribution tokens through these services.
+
+Nomdo 1.1: RevenueCat and ActivationPal integration adds usage analytics and Apple Ads measurement after you install this version. It cannot reconstruct earlier app sessions or subscription-screen interactions. A first SDK launch may belong to an existing installation that has updated.
+What stays on your device
+
+Your ingredients, setup answers, foods you avoid, reminder settings, personal recipes, photos and appearance preferences stay in the app’s protected container and are not sent to analytics services. Your full favorites list stays on your device; Nomdo 1.5 and later report individual favorite actions with a public catalog recipe ID as described above. Your selected app language is included in analytics context in versions 1.1 and later. Breakfast matching and ingredient-name search work offline. If you choose to share a photo, iOS sends the selected image to the app or recipient you choose; that service has its own privacy practices. Device backups are controlled by your Apple settings.
+New breakfasts
+
+The app downloads a shared public catalog and its pictures from our server. Catalog requests do not include your ingredients, favorites, personal recipes or photos. The server receives the network address needed to deliver a response. We do not keep access logs for these catalog requests.
+Purchases
+
+Apple processes Nomdo Pro subscriptions and the one-time Lifetime purchase. Apple confirms access in the app; we do not receive your payment card details or Apple ID. The enabled server integration sends RevenueCat transaction identifiers, product and purchase information, subscription status and related events such as trials, renewals, cancellations and refunds. RevenueCat can associate these records with a pseudonymous customer identifier. We use them to verify and analyse purchases. When forwarding to ActivationPal is enabled, ActivationPal also receives these purchase events; version 1.0 does not supply a usage journey to join them to.
+
+In Nomdo 1.1, the app also sends verified transactions and restore information to RevenueCat. Its random customer ID is shared with ActivationPal to connect purchase records with that version's usage events.
+
+Nomdo 1.2 continues sending verified transactions and restore information to RevenueCat. RevenueCat also forwards purchase and subscription events to our own server, and we have imported available earlier purchase records. Our server stores pseudonymous customer and transaction identifiers, product identifiers, amounts, dates and supported subscription lifecycle details for purchase analytics, reconciliation and support. The 90-day limit for usage events does not apply to these purchase records. They are retained while we use the service, subject to deletion requests and applicable retention obligations.
+Usage analytics and Apple Ads
+
+This section applies to Nomdo 1.1 after you install it. ActivationPal receives app-open and screen-view events, subscription-screen interactions, plan choices, purchase and restore results, recipe-opening and favorite-change actions, filter and saved-product counts, servings changes, and photo-share flow outcomes. These events describe fixed actions, categories and counts; they do not include recipe names, search text, ingredient lists, favorite lists, personal recipes or photographs. A completed system share action does not establish that a social post was published.
+
+Events carry a random installation ID, session and event IDs, the RevenueCat customer ID, timestamps, app version/build, iOS version, device model, locale, app language, time zone, App Store country and an approximate app-container creation date and age. Its hosting provider derives an approximate country and city from the connection's IP address. We do not request GPS location. Hosting providers receive IP addresses and may retain them in operational logs.
+
+To measure installs from our Apple Ads campaigns, the app sends an Apple attribution token to RevenueCat and ActivationPal. The services use it to obtain Apple's attribution result. Nomdo does not collect the IDFA advertising identifier, show in-app ads, sell analytics data or use this integration to track you across other companies' apps and websites.
+Service providers
+
+RevenueCat processes purchase data for Nomdo. ActivationPal receives purchase data when forwarding is enabled and usage data from version 1.1. These services store analytics data in the United States. Apple handles App Store payments and Apple Ads attribution. Connections use HTTPS. More information: RevenueCat, ActivationPal and Apple.
+Retention and your choices
+
+Remove ingredients and favorites in the app. Deleting the app removes its local data; device backups may retain a copy. It does not cancel a subscription or delete records already held by analytics providers. Manage or cancel a subscription in Settings → your name → Subscriptions.
+
+There is no setting to stop server-side purchase notifications. Nomdo 1.1 has no in-app usage-analytics switch. ActivationPal has no automatic expiry for records it receives. RevenueCat records are retained for purchase support and analytics while we use the service, subject to deletion requests and any applicable retention obligations. We do not promise a fixed deletion deadline for providers' logs or backups.
+
+For access, correction or deletion requests, email artsaverin@gmail.com. We may need an identifier we can match, such as a purchase transaction reference, because analytics records use random IDs rather than your name or email. Without a matching identifier we may be unable to locate your records. Do not send payment card details or passwords. Some purchase records may need to be retained for refunds or legal obligations.
+Support and children
+
+If you email us, we receive your email address and the information you choose to include, and use them to answer your request. Nomdo is not designed specifically for children.
+Changes and contact
+
+We update this page when our practices change. Questions: m.bolotska@gmail.com.
