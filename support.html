@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Nomdo</title>
+<meta name="description" content="Get help with Nomdo for iOS: subscriptions, restoring purchases, where your data lives, and how to reach us.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Support — Nomdo">
+<meta property="og:description" content="Subscriptions, restoring purchases, where your data lives, and how to reach us.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6b64'/%3E%3Ctext x='16' y='22.5' font-family='Georgia,serif' font-size='18' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --ink: #1c1b19;
+    --ink-soft: #4a4742;
+    --ink-mute: #6f6a63;
+    --rule: #e2ddd4;
+    --accent: #0b6b64;
+    --accent-soft: #e6f1ef;
+    --radius: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f10;
+      --surface: #161617;
+      --ink: #ece9e4;
+      --ink-soft: #c3bfb8;
+      --ink-mute: #948f88;
+      --rule: #2a2a2c;
+      --accent: #6fd3c7;
+      --accent-soft: #16292a;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    text-decoration-color: var(--rule);
+    transition: text-decoration-color 120ms ease;
+  }
+
+  a:hover { text-decoration-color: currentColor; }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 10;
+    padding: 0.6rem 0.9rem;
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: 8px;
+  }
+
+  .skip:focus { left: 1rem; top: 1rem; }
+
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: clamp(1.75rem, 6vw, 4.5rem) clamp(1.15rem, 5vw, 2rem) 4.5rem;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .eyebrow .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: ui-serif, "New York", "Iowan Old Style", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 6vw, 2.7rem);
+    line-height: 1.08;
+    letter-spacing: -0.018em;
+    margin: 0 0 0.85rem;
+    text-wrap: balance;
+  }
+
+  .meta {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--ink-mute);
+  }
+
+  .lede {
+    margin: 1.75rem 0 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    text-wrap: pretty;
+  }
+
+  section {
+    margin: 0 0 2.75rem;
+    scroll-margin-top: 1.5rem;
+  }
+
+  h2 {
+    margin: 0 0 1.1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 1.3rem;
+    font-weight: 620;
+    letter-spacing: -0.008em;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  h3 {
+    margin: 1.85rem 0 0.55rem;
+    font-size: 1rem;
+    font-weight: 620;
+    line-height: 1.4;
+    text-wrap: pretty;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    text-wrap: pretty;
+  }
+
+  section p:last-child { margin-bottom: 0; }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1.25rem;
+    margin: 1.35rem 0 0;
+    padding: 1rem 1.2rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+  }
+
+  .contact a {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    text-decoration-color: currentColor;
+  }
+
+  .contact span {
+    font-size: 0.8125rem;
+    color: var(--ink-mute);
+  }
+
+  footer {
+    margin-top: 3.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+    color: var(--ink-mute);
+  }
+
+  footer p { margin: 0; }
+
+  footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  @media print {
+    :root {
+      --bg: #fff;
+      --surface: #fff;
+      --ink: #000;
+      --ink-soft: #222;
+      --ink-mute: #444;
+      --rule: #bbb;
+      --accent: #000;
+      --accent-soft: #eee;
+    }
+
+    body { font-size: 10.5pt; }
+    .wrap { max-width: none; padding: 0; }
+    .skip { display: none; }
+    a { text-decoration: none; }
+    h2, h3 { break-after: avoid; }
+    .lede { border-left-color: #000; }
+    .contact { border-color: #000; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Nomdo · iOS</p>
+    <h1>Support</h1>
+    <p class="lede">Nomdo — breakfast ideas by time, taste and what you have at home.</p>
+  </header>
+
+  <main id="main">
+
+    <section id="write">
+      <h2>Write to us</h2>
+      <p>We answer email — a question, a bug or a breakfast idea. If you are reporting a bug, tell us your device model and iOS version: it makes the fix faster.</p>
+      <p class="contact">
+        <a href="mailto:artsaverin@gmail.com">artsaverin@gmail.com</a>
+        <span>Usually a reply within a couple of days</span>
+      </p>
+    </section>
+
+    <section id="faq">
+      <h2>Frequent questions</h2>
+
+      <h3>What is free and what is in Nomdo Pro?</h3>
+      <p>All core breakfasts, filters, your ingredients at home, favorites and servings are free. Nomdo Pro adds new breakfasts and themed collections that arrive regularly without an app update, and collections by protein, calories, sugar, fiber and carbs.</p>
+
+      <h3>How do I cancel a subscription?</h3>
+      <p>Subscriptions are handled by Apple: Settings → your name → Subscriptions. You can cancel at any time; the period you already paid for runs to its end. A free trial cancelled at least 24 hours before it ends is not charged.</p>
+
+      <h3>How do I restore a purchase on a new device?</h3>
+      <p>Sign in with the same Apple ID, open Settings in Nomdo and tap “Restore purchases”.</p>
+
+      <h3>Where is my data stored?</h3>
+      <p>Your ingredients and personal recipe content stay on your device; no account is required. Your full favorites list stays on your device. After you install Nomdo 1.5 or later, individual recipe openings and favorite changes include the public recipe ID; aggregate recent favorites also form the shared Popular ranking, without publishing user identifiers or personal lists. Apple sends purchase events to RevenueCat, which also forwards them to our server and the existing ActivationPal integration. Versions 1.2 and later send usage events to our own server, where they are retained for 90 days; setup answers and reminder settings stay on your device. Version 1.1 sends usage events to ActivationPal; version 1.0 does not send app usage events. The usage-event retention limit does not apply to purchase records. Details are in the <a href="privacy.html">privacy policy</a>.</p>
+
+      <h3>How do I delete all data?</h3>
+      <p>Remove ingredients and favorites in the app, or delete the app to erase its local data. This does not cancel a subscription or delete purchase and analytics records already held by service providers. For a data request, email <a href="mailto:artsaverin@gmail.com">artsaverin@gmail.com</a>; see the <a href="privacy.html">privacy policy</a> for details.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Nomdo · <a href="index.html">Home</a></p>
+    <nav>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="mailto:m.bolotska@gmail.com">Contact</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
